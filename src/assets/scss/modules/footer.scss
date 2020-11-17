@@ -1,1 +1,272 @@
 // footer style
+
+.footer {
+
+ // footer top
+ .footer__inner {
+  padding: 50px 0;
+  text-align: center;
+
+  &-items {
+   font-size: 16px;
+   text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 20px;
+
+   a {
+    span {
+     color: #fff;
+    }
+   }
+  }
+
+  &-item {
+   padding: 0 20px;
+
+   &:hover {
+    a {
+     text-decoration: underline;
+     color: #fff;
+
+     img {
+      transform: scale(1.2);
+     }
+    }
+   }
+
+   &:nth-child(2) {
+    padding: 0;
+
+    span {
+     padding: 0 35px;
+     border-right: 1px solid #445059;
+     border-left: 1px solid #445059;
+    }
+   }
+
+   a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+     margin-bottom: 20px;
+     width: 50px;
+     transition: .6s;
+    }
+
+   }
+  }
+
+  &-label {
+   span {
+    cursor: context-menu;
+    color: #fff;
+   }
+  }
+ }
+
+ // footer bottom
+ &__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+
+  .footer__contacts {
+   display: flex;
+
+   &-phone {
+    margin-right: 60px;
+
+    a {
+     &::before {
+      content: url(/assets/img/content/icons/tel.png);
+     }
+
+     &:hover {
+      &::before {
+       animation: shake 0.6s;
+       animation-iteration-count: infinite;
+      }
+     }
+    }
+   }
+
+   @keyframes shake {
+    0% {
+     transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+     transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+     transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+     transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+     transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+     transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+     transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+     transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+     transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+     transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+     transform: translate(1px, -2px) rotate(-1deg);
+    }
+   }
+
+   &-mail {
+    a {
+     &::before {
+      content: url(/assets/img/content/icons/mail.png);
+     }
+    }
+   }
+
+   &-phone,
+   &-mail {
+    padding-left: 55px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    a {
+     color: #fff;
+     font-size: 18px;
+     margin-bottom: 2px;
+
+     &:hover {
+      text-decoration: underline;
+     }
+
+     &::before {
+      position: absolute;
+      left: 0;
+     }
+    }
+
+    color: #fff;
+    font-size: 13px;
+   }
+  }
+
+  // selectlang
+  .footer__select {
+   &-wrapper {
+    position: relative;
+    @include m400;
+    color: #fff;
+    font-size: 13px;
+
+    .arrow_img {
+     content: url(/assets/img/content/icons/arrow-down.png);
+     position: absolute;
+     top: 22px;
+     right: 14px;
+    }
+
+    .current {
+     color: #fff;
+     text-align: left;
+     display: flex;
+     flex-direction: row-reverse;
+     justify-content: flex-end;
+     display: flex;
+     align-items: center;
+     @include m400;
+
+     img {
+      width: 19px;
+      height: 13px;
+      margin-right: 11px;
+     }
+    }
+   }
+
+   &-btn {
+    display: block;
+    width: 200px;
+    border: 0px;
+    outline: none;
+    background-color: #1e252b;
+    border-radius: 6px;
+    padding: 15px 15px;
+    position: relative;
+    z-index: 150;
+    cursor: pointer;
+
+    &.active {
+     border-radius: 0 0 5px 5px;
+    }
+
+    .myImage {
+     transform: rotate(180deg);
+    }
+   }
+
+   &-content {
+    background-color: #1e252b;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    animation: fadeIn 0.5s;
+    position: absolute;
+    width: 200px;
+    bottom: 48px;
+    z-index: 149;
+    display: none;
+
+    .footer__select-btn {
+     display: flex;
+     flex-direction: row-reverse;
+     justify-content: flex-end;
+     align-items: center;
+    }
+
+    img {
+     width: 19px;
+     height: 13px;
+     margin-right: 11px;
+    }
+
+    &.seeme {
+     display: block !important;
+    }
+
+    @keyframes fadeIn {
+     from {
+      opacity: 0;
+     }
+
+     to {
+      opacity: 1;
+     }
+    }
+   }
+  }
+ }
+}

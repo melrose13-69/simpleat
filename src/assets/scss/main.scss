@@ -3,88 +3,66 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
+@import "utils/global";
+@import "modules/footer";
+@import "modules/header";
 
-html {
-  line-height: $mainLineHeight;
-	font-size: $mainFontSize;
-	color: $mainFontColor;
-  height: 100%;
-  @media screen and (max-width: $desktopWidth) {
-		font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-		font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-		font-size: 14px;
-  }
+
+
+// section purchase start
+.purchase {
+ padding-top: 110px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: $mainFont;
-	font-size: $mainFontSize;
-  font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+.select {
+ position: relative;
+ background: #FFFFFF;
+ max-width: 550px;
+ width: 100%;
+ border-radius: 5px;
+ font-size: 24px;
+ border: 1px solid #e5e4d7;
 
-*, *:before, *:after { box-sizing: border-box; }
+ &__header {
+  cursor: pointer;
+ }
 
-h1, h2, h3, h4, h5, h6 { margin: 0; }
+ &__body {
+  background-color: #fff;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  justify-content: center;
+ }
 
-a { text-decoration: none; }
-
-ul, li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-section, .section {
+ &__item {
+  cursor: pointer;
+  width: 78px;
+  padding: 15px 0 17px 0;
+  border-top: 1px solid #F1F1F1;
   position: relative;
-  padding: 40px 0;
-  @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
+
+  span {
+   position: absolute;
+   background-image: url(/assets/img/icons/france.svg);
+   width: 20px;
+   height: 15px;
   }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
+
+  &.active {
   }
-  @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
-  }
+ }
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  min-height: 100vh;
+.select.is-active .select__body {
+ display: flex;
 }
 
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+
+.select__item:hover {
+ background-color: #f2f2f2;
 }
 
-.container {
-  width: 100%;
-  flex: 0 0 auto;
-  position: relative;
-  margin: 0 auto;
-  max-width: $desktopWidth;
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: tableWidth;
-  }
-  @media screen and (max-width: $tableWidth) {
-    max-width: phoneWidth;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    max-width: smPhoneWidth;
-  }
-}
-
-// Modules
-// @import "modules/my-module.scss";
+// section purchase end

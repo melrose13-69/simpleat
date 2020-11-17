@@ -3,17 +3,38 @@ block variables
 
 doctype html
 html(lang='en')
-  head
-    meta(charset='utf-8')
-    title #{title}
-    meta(name="description", content=description)
-    block head
+ head
+  meta(charset='utf-8')
+  title #{title}
+  meta(name="description", content=description)
+  block head
 
-  body(class=pageClass)
-    .wrapper
-     include ../includes/modules/header
-     .content-wrapper
-       block content
-     include ../includes/modules/footer
+ body(class=pageClass)
+  .wrapper
+   include ../includes/modules/header
+   .content-wrapper
+    block content
+    section.purchase
+     .container--fluid(style="background: linear-gradient(to bottom, #ffffff 0%,#fefefe 25%,#fdfdfb 51%,#fcfcfa 75%,#fcfcfa 99%);")
+      .container
+       .purchase__inner
+        .purchase__inner-logo
+         img(src="assets/img/content/bottles.jpg" alt="") 
+        .purchase__inner-market.purchase__market
+         .purchase__market-info
+          .purchase__market-title
+           h2.title more than food
+          .purchase__market-text
+           p Everything your body needs in one bottle of Simpleat. Drink Simpleat and forget about hunger. Be the first to try nutrition designed for your needs. 
+          .purchase__market-subtitle
+           h3 Free shipping for orders over €90
+         form(action="" class="purchase__inner-form purchase__form") 
+          .purchase__form-select.select
+           .select__header
+            span.select__current 12 bottles
+           .select__body
+            each val in ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+             .select__item(data-choice='choosen' data-value= val++)= val * 12 + ' ' + 'bottles'
+   include ../includes/modules/footer
 
-    block script
+  block script

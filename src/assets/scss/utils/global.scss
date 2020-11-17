@@ -1,0 +1,146 @@
+html {
+ font-size: $mainFontSize;
+ color: $mainFontColor;
+ height: 100%;
+
+ @media screen and (max-width: $desktopWidth) {
+  font-size: 16px;
+ }
+
+ @media screen and (max-width: $tableWidth) {
+  font-size: 15px;
+ }
+
+ @media screen and (max-width: $phoneWidth) {
+  font-size: 14px;
+ }
+}
+
+body {
+ margin: 0;
+ padding: 0;
+ @include m400;
+ font-size: $mainFontSize;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+ box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ margin: 0;
+}
+
+i {
+ font-style: normal;
+}
+
+a {
+ text-decoration: none;
+}
+
+ul,
+li {
+ margin: 0;
+ padding: 0;
+ list-style-type: none;
+}
+
+section,
+.section {
+ position: relative;
+ padding: 40px 0;
+
+ @media screen and (max-width: $desktopWidth) {
+  padding: 36px 0;
+ }
+
+ @media screen and (max-width: $desktopWidth) {
+  padding: 28px 0;
+ }
+
+ @media screen and (max-width: $desktopWidth) {
+  padding: 20px 0;
+ }
+}
+
+.wrapper {
+ display: flex;
+ flex-direction: column;
+ margin: 0 auto;
+ min-height: 100vh;
+}
+
+.content-wrapper {
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+}
+
+footer {
+ @include m400;
+
+ a {
+  @include m400
+ }
+}
+
+.title {
+ @include b400;
+ font-size: 60px;
+}
+
+.container {
+ width: 100%;
+ flex: 0 0 auto;
+ position: relative;
+ margin: 0 auto;
+ max-width: $desktopWidth;
+ padding: 0 30px;
+
+ @media screen and (max-width: $smDesktopWidth) {
+  max-width: tableWidth;
+ }
+
+ @media screen and (max-width: $tableWidth) {
+  max-width: phoneWidth;
+ }
+
+ @media screen and (max-width: $phoneWidth) {
+  max-width: smPhoneWidth;
+ }
+}
+.container--fluid,
+.container--fluid-light,
+.container--fluid-dark,
+.container--fluid-footer-top,
+.container--fluid-footer-bottom {
+ width: 100%;
+ margin: 0 auto;
+ position: relative;
+}
+
+.container--fluid-light {
+ background-color: #f0f6f4;
+}
+
+.container--fluid-dark {
+ background-color: #36c1ba;
+}
+
+.container--fluid-footer-top {
+ background-color: #192632;
+}
+
+.container--fluid-footer-bottom {
+ background-color: $mainFontColor;
+}

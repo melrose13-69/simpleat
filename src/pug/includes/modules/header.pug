@@ -1,3 +1,18 @@
-header
+header.header
+ .container--fluid-light
   .container
-    span header
+   .header__inner
+    .header__inner-list.header__list
+     .header__list-cart
+      a(class="header__list-link cart-link" href="#") Cart
+     .header__list-contact
+      a(class="header__list-link contact-link" href="#") Contact
+    .header__inner-logo
+     a(href="#")
+      img(src="assets/img/logo.png", alt="" class="header__logo")
+    .header__inner-btn.header__btn
+     .header__btn-signin
+      a(href="#" class="header__btn-link signin-link") Sign in
+     span.btn__order Order Now
+      
+   
