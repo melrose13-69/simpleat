@@ -1,0 +1,18 @@
+mixin selectItems
+ .select__item.active(data-choice='choosen' data-value="0") 12 bottles
+ each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  .select__item(data-choice='choosen' data-value= val)= (val + 1) * 12 + ' ' + 'bottles'
+
+mixin variety-item(bgi, to, title, info)
+ .variety__item
+  .variety__item-img(style= bgi)
+   img(src= to, alt="")
+  .variety__item-title= title
+  .variety__item-info= info
+
+
+mixin table-item(name1, name2, name3, clas1, id)
+ div(class= clas1 id= id)
+  span(class='name')= name1
+  span(class='amount')= name2
+  span(class='parcent')= name3

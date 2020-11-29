@@ -9,10 +9,10 @@ html(lang='en')
   meta(name="description", content=description)
   block head
 
- body(class=pageClass)
+ body(class=pageClass id= pageId)
   .wrapper
    include ../includes/modules/header
-   .content-wrapper
+   .content-wrapper#element
     block content
     section.purchase
      .container--fluid(style="background: linear-gradient(to bottom, #ffffff 0%,#fefefe 25%,#fdfdfb 51%,#fcfcfa 75%,#fcfcfa 99%);")
@@ -32,9 +32,271 @@ html(lang='en')
           .purchase__form-select.select
            .select__header
             span.select__current 12 bottles
-           .select__body
-            each val in ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-             .select__item(data-choice='choosen' data-value= val++)= val * 12 + ' ' + 'bottles'
+           .select__body( id="select-bory")
+            +selectItems    
+          .purchase__form-checkbox
+           .purchase__checkbox#buynow-checkbox
+            label.purchase__checkbox-label.option
+             input.purchase__checkbox-input(type='radio' name="radio" id="purchase")
+             span.checkbox__btn
+             span(class="checkbox__name checkbox-onetime") One-Time
+              span(class="checkbox__descr") Purchase
+           .purchase__checkbox#subscribe-checkbox.subscribe__info-open
+            label.purchase__checkbox-label.option
+             input.purchase__checkbox-input(type='radio' name="radio" id="subscribe" checked)
+             span.checkbox__btn
+             span(class="checkbox__name checkbox-subscribe") Subscribe
+              span(class="checkbox__descr") and save 5%
+            div(class="subscribe__info" id="subscribe__info")
+             .subscribe__info-wrapper 
+              span Buy subscribing you will recieve 12 bottles of Simpleat monthly
+              span You can cancel your subscribtion anytime.
+              a(href="#") Learn More
+          .purchase__form-logic
+           .purchase__form-info
+            span(id="result" class="price__result") 
+             span € 30
+            span €2.50 per meal (400 kcal)
+           .purchase__form-button
+            button(id="button" class="btn--animate") Subscribe
+    section.presentation
+     .container--fluid-dark
+      .container
+       .presentation__inner
+        .presentation__inner-info
+         .presentation__info-title
+          h1.title What is Simpleat?
+         p(class="presintation__info-uptext presintation__info-text") Simpleat is made to provide the perfectly balanced diet with every nutrient your body needs for optimal health.
+         p(class="presintation__info-downtext presintation__info-text") Simpleat will take care of your hunger while you have more important things to do whether it is your work, business, travel or simply having fun.
+        .presentation__inner-video.presentation__video
+         .presentation__video-wrapper
+          img(src="assets/img/content/video-bg.jpg" alt="")
+          a(href="#popup" class="popup-link presentation__video-button" data-video="https://www.youtube.com/embed/Cp4Rxh1ZqzA?autoplay=1")
+           span(class="presentation__video-img")
+           span Play video
+    section.variety
+     .container
+      .variety__inner
+       .variety__content
+        .variety__content-info
+         .variety__content-title
+          h1.title Why Simpleat?
+         .variety__content-text
+          p Enjoy all the benefits of Simpleat
+        .variety__content-items
+         +variety-item('background-image: url(assets/img/content/proses/bg-nutrition.jpg)', 'assets/img/content/proses/nutrition-logo.png', 'Complete nutrition', 'One bottle of Simleat provides 20% of your daiyly needs for calories and micronutrients.')
+         +variety-item('background-image: url(assets/img/content/proses/bg-time.jpg)', 'assets/img/content/proses/time-logo.png', 'Save time', 'Spend your time on business, sport, work, family or fun. Simpleat will take care of your nutrition.')
+         +variety-item('background-image: url(assets/img/content/proses/bg-money.jpg)', 'assets/img/content/proses/money-logo.png', 'Save money', 'Reasonable price for a complete, balanced and healthy meal. ')
+         +variety-item('background-image: url(assets/img/content/proses/bg-health.jpg)', 'assets/img/content/proses/health-logo.png', 'Great health', 'Simpleat helps your body to stay healthy and vibrant.')  
+         +variety-item('background-image: url(assets/img/content/proses/bg-energy.jpg)', 'assets/img/content/proses/energy-logo.png', 'High energy', 'No sugar spikes, only sustainable level of energy..')  
+         +variety-item('background-image: url(assets/img/content/proses/bg-hunger.jpg)', 'assets/img/content/proses/hunger-logo.png', 'No hunger', 'A bottle of Simpleat immediately saves you from hunger and satisfy your body needs. ')  
+        a.btn--animate.variety__content-btn(href="#") Order Simpleat
+    section.testimonial
+     .container--fluid-light
+      .container
+       .testimonial__inner.tsmnl__inner
+        .tsmnl__content
+         .tsmnl__inner-info.main__inner-info
+          .ingredients__content-title
+           h1.title Testimonial
+          .ingredients__content-text
+           p Simpleat is made to provide the perfectly balanced diet with every nutrient your body needs for optimal health.
+         .tsmnl__content-items            
+          .tsmnl__content-item(style="background-image: url(assets/img/content/testimonials/photo-item-1.jpg)")
+           .tsmnl__item-bg
+           .tsmnl__item-info
+            h5 Anna, 25  •  Manager 
+            p Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum 
+          .tsmnl__content-item(style="background-image: url(assets/img/content/testimonials/photo-item-2.jpg)")
+           .tsmnl__item-bg
+           a(href="#popup" class="popup-link" data-video="https://www.youtube.com/embed/8uQqaauS5UA?autoplay=1")
+           .tsmnl__item-info
+            h5 Stiv, 25  •  Manager
+            p Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum   
+          .tsmnl__content-item(style="background-image: url(assets/img/content/testimonials/photo-item-3.jpg)")
+           .tsmnl__item-bg
+           a(href="#popup" class="popup-link" data-video="https://www.youtube.com/embed/B5mimngffGQ?autoplay=1")
+           .tsmnl__item-info
+            h5 Julia, 45  •  Manager 
+            p Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum 
+          .tsmnl__content-item(style="background-image: url(assets/img/content/testimonials/photo-item-4.jpg)")
+           .tsmnl__item-bg
+           .tsmnl__item-info
+            h5 John, 35  •  Manager 
+            p Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum 
+    section.ingredients
+     .container
+      .ingredients__inner
+       .ingredients__content
+        .ingredients__content-info
+         .ingredients__content-title
+          h1.title Main ingredients
+         .ingredients__content-text
+          p What is inside Simpleat?
+       .ingredients__content-items
+        +variety-item('background-image: url(assets/img/content/ingridients/protein.png)', '', 'Soybean protein', 'Soy is a complete protein and rich in vitamins and minerals. Soybean protein provides all the essential amino acids in the amounts needed for human health.')
+        +variety-item('background-image: url(assets/img/content/ingridients/oils.png)', '', 'Oils', 'The perfect mix of lipids from sea algae, coconut, sunflower, flaxseed and canola. Rich with omega-3, unsaturated fatty acids DHA and EPA, which contribute to the normal function of the heart and brain function.')
+        +variety-item('background-image: url(assets/img/content/ingridients/flour.png)', '', 'Oat flour', 'Oat flour is made from whole oats and contains beta-glucans. This fiber have shown to lower risk factors for heart disease such as high cholesterol and high blood pressure.')
+        +variety-item('background-image: url(assets/img/content/ingridients/isomaltulose.png)', '', 'Isomaltulose', 'somaltulose is a natural occurring disaccharide. It keeps you energetic without the spikes of refined sugar.')
+        +variety-item('background-image: url(assets/img/content/ingridients/vitamins.jpg)', '', 'Minerals & Vitamins', 'A bottle of Simpleat contains 20% of daily requirements of all micronutrients for your body.')          
+    section.facts
+     .container--fluid-light
+      .container
+       .facts__inner
+        .facts__content
+         .facts__content-title
+          h1.title Nutritional Facts
+         .facts__content-items
+          .facts__content-left
+           .facts__content-item
+            .facts__content-name
+             h3.facts-name Energy
+            .facts__content-about
+             p.facts-about 400 kcal in one bottle 
+              span 20% of your daily needs
+           .facts__content-item
+            .facts__content-name
+             h3.facts-name Nutrients
+            .facts__content-about
+             p.facts-about 20% of your daily requirements
+              span in each bottle
+           .facts__content-item
+            .facts__content-name
+             h3.facts-name Neutral pleasant taste
+            .facts__content-about
+             p.facts-about Enjoy Simpleat's neutral taste several times a day and never get tired
+          .facts__content-middle
+           .facts__content-img
+            img(src="assets/img/content/bottle.png" alt="")
+           .facts__content-link
+            a(href="https://drive.google.com/u/0/uc?id=1mhlMoknLS6CpX3ru_bv13Wk_HQ8NJwvd&export=download" download) Download PDF
+           .facts__content-btn
+            a.btn--animate(href="#") Order Now    
+          .facts__content-right
+           .facts__content-item
+            .facts__content-name
+             h3.facts-name Vegan, lactose-free, nut-free
+            .facts__content-about
+             p.facts-about Easy to make food descisions.
+           .facts__content-item
+            .facts__content-name
+             h3.facts-name Scientifically approved
+            .facts__content-about
+             p.facts-about Simpleat is designed in a lab, based on clinical studies and produced using the latest high-tech.
+           .facts__content-item
+            .facts__content-name
+             h3.facts-name Anywhere you go
+            .facts__content-about
+             p.facts-about 1-year shelf life and no refrigeration required. Excellent nutrition is always with you  
+    section.graphic
+     .container
+      .graphic__inner
+       .graphic__content
+        .graphic__inner-info
+         h1.title Low glycemic and insulin index
+         p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        .graphic__inner-convas.chart_div
+         <canvas id="speedChart" width="750px" height="400px"></canvas>    
+    section.superfood
+     .container--fluid-light
+      .container
+       .superfood__inner
+        .superfood__inner-info
+         h1.title Simpleat — Super food
+         p Nutritional Profile. 
+         span Click on the Title to learm more 
+        .superfood__inner-items.tabs
+         .tabs__triggers
+          a(href="#tab-1" class="tabs__triggers-item") Macronutreins
+          a(href="#tab-2" class="tabs__triggers-item") Vitamins
+          a(href="#tab-3" class="tabs__triggers-item") Minerals
+         .tabs__content
+          #tab-1.tabs__content-item
+           .tabs__content-img(style="background-image: url(assets/img/content/bottle-transperent.png)")
+            span What's inside?
+           .tabs__content-table
+            div(class='tabs__table-title')
+             span.padding.name
+             span.amount Amount
+             span.parcent %RI
+            +table-item('Calories', '400 kcal', '20%', 'line tabs__content-line', '')
+            +table-item('Fat', '27.7 g', '', 'line tabs__content-line', '')
+            +table-item('Saturated', '10.5 g', '', 'line tabs__content-line', '')
+            +table-item('Monosaturated', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Polyunsaturated', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Omega 3 fatty acids', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Omega 6 fatty acids', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Carbohydrates', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Sugars', '20.7 g', '', 'line tabs__content-line', '')
+            +table-item('Fiber', '7.0 g', '', 'line tabs__content-line', '')
+            +table-item('Protein', '40.1 g', '', 'line tabs__content-line', '')
+            +table-item('Salt', '2.1 g', '', 'line tabs__content-line', '')
+          #tab-2.tabs__content-item
+           .tabs__content-img(style="background-image: url(assets/img/content/bottle-transperent.png)")
+            span What's inside?
+           .tabs__content-table
+            div(class='tabs__table-title')
+             span.padding.name
+             span.amount Amount
+             span.parcent %RI
+            +table-item('A', '400 kcal', '20%', 'line tabs__content-line', '')
+            +table-item('B', '27.7 g', '', 'line tabs__content-line', '')
+            +table-item('C', '10.5 g', '', 'line tabs__content-line', '')
+            +table-item('D', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('E', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('D2', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('D3', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('A2', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('B2', '20.7 g', '', 'line tabs__content-line', '')
+            +table-item('B5', '7.0 g', '', 'line tabs__content-line', '')
+            +table-item('B6', '40.1 g', '', 'line tabs__content-line', '')
+            +table-item('B7', '2.1 g', '', 'line tabs__content-line', '')
+          #tab-3.tabs__content-item
+           .tabs__content-img(style="background-image: url(assets/img/content/bottle-transperent.png)")
+            span What's inside?
+           .tabs__content-table
+            div(class='tabs__table-title')
+             span.padding.name
+             span.amount Amount
+             span.parcent %RI
+            +table-item('Calories', '400 kcal', '20%', 'line tabs__content-line', '')
+            +table-item('Fat', '27.7 g', '', 'line tabs__content-line', '')
+            +table-item('Saturated', '10.5 g', '', 'line tabs__content-line', '')
+            +table-item('Monosaturated', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Polyunsaturated', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Omega 3 fatty acids', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Omega 6 fatty acids', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Carbohydrates', '5.3 g', '', 'line tabs__content-line', '')
+            +table-item('Sugars', '20.7 g', '', 'line tabs__content-line', '')
+            +table-item('Fiber', '7.0 g', '', 'line tabs__content-line', '')
+            +table-item('Protein', '40.1 g', '', 'line tabs__content-line', '')
+            +table-item('Salt', '2.1 g', '', 'line tabs__content-line', '')
+        .superfood__inner-btn
+         a.btn--animate(href="#") Order now
+    section.email-form
+     .container
+      .email-form__inner
+       .email-form__inner-info
+        h1.title Join us
+        p Stay updated, enjoy special offers and bonuses
+       .email-form__inner-form
+        form.form-email
+         input(type="email" name="email" class="email-form" id="input-email" placeholder="Your e-mail")
+         span(class="error")
+         button(type="submit" class="email-submit btn--animate") Sign up!  
+   #cookie-popup-wrapper.hidden
+   #cookie-popup.hidden
+    p This website uses cookies. The information in the cookies is used to provide the best experience for you on our website.
+    a(href="#" id="accept") I agree
+   #popup.video__popup.popup
+    .popup__wrapper
+     .popup__content
+      a(href="#header" class="popup__content-close popup-close") X
+      .popup__content-video 
+       <iframe id="frame" class="frame" width="1000" height="600" src="" autoplay allow="autoplay" allowfullscreen></iframe>
+   #popup__item-1.tsmnl__popup.popup
+    div 1111111111
    include ../includes/modules/footer
 
   block script
+
