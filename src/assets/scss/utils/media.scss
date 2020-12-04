@@ -1,0 +1,932 @@
+//  ------------ media global'
+
+
+@media (max-width: 1150px) {
+
+ // global
+ // title
+ .title {
+  font-size: 50px;
+  margin-bottom: 20px;
+ }
+
+ // text
+ .purchase__market-text {
+  font-size: 14px;
+  margin-bottom: 10px;
+ }
+
+ // porchase 
+ .purchase {
+  &__inner {
+   padding: 90px 0 40px 0;
+
+   &-logo {
+    margin-right: 30px;
+   }
+  }
+ }
+
+ // presentation
+ .presentation {
+  &__inner {
+   flex-direction: column;
+   padding: 50px 0;
+
+   &-info {
+    margin-bottom: 20px;
+    max-width: 600px;
+
+    .presintation__info-uptext {
+     margin-bottom: 15px;
+    }
+   }
+  }
+ }
+
+ // testimonial
+ .testimonial {
+  .tsmnl__inner {
+   padding: 60px 0;
+  }
+
+  .tsmnl__content {
+   &-items {
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .tsmnl__content-item {
+     margin: 0 55px 30px 50px;
+    }
+   }
+  }
+ }
+
+ // ingredients
+ .ingredients {
+  &__inner {
+   padding: 60px 0;
+  }
+
+  .ingredients__content-items {
+   flex-wrap: wrap;
+   justify-content: space-around;
+
+   .variety__item {
+    margin: 0 40px 40px 40px;
+   }
+  }
+ }
+
+ // facts
+ .facts {
+  &__inner {
+   .facts__content {
+    &-items {
+     justify-content: space-between;
+
+     .facts__content-left,
+     .facts__content-right {
+      padding-top: 0;
+
+      .facts__content-item {
+       max-height: 90px;
+       height: 100%;
+       max-width: 300px;
+
+      }
+     }
+
+     .facts__content-left {
+
+      .facts__content-item {
+       padding-right: 0;
+
+       &::before {
+        right: -70px;
+       }
+
+       &:nth-child(2) {
+        padding-right: 0;
+
+        &::before {
+         right: -70px;
+        }
+       }
+      }
+     }
+
+     .facts__content-middle {
+      .facts__content-img {
+       &::before {
+        display: none;
+       }
+      }
+     }
+
+     .facts__content-right {
+      .facts__content-item {
+       padding-left: 0;
+
+       &::before {
+        left: -70px;
+       }
+
+       &:nth-child(2) {
+        padding-left: 0;
+
+        &::before {
+         left: -70px;
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+
+ // superfood
+ .superfood {
+  &__inner {
+   .tabs {
+    &__content {
+     &-item {
+      padding: 40px 50px 40px 70px;
+     }
+    }
+   }
+  }
+ }
+}
+
+@media (max-width: 1100px) {
+
+ // porchase 
+ .purchase {
+  &__inner {
+   align-items: center;
+  }
+ }
+
+ // variety
+ .variety {
+  &__inner {
+   padding: 80px 0 85px;
+
+   .variety__content {
+    &-items {
+     flex-wrap: wrap;
+
+     .variety__item {
+      margin: 0 55px 40px 55px;
+     }
+    }
+   }
+  }
+ }
+}
+
+
+@media (max-width: 999px) {
+
+ // porchase 
+ .purchase {
+  padding-top: 60px;
+
+  &__inner {
+   .purchase__market {
+    max-width: 450px;
+   }
+
+   .purchase__market-info {
+    margin-bottom: 15px;
+   }
+
+   &-form {
+    .select {
+     margin-bottom: 15px;
+     font-size: 16px;
+
+     &__header {
+      height: 45px;
+     }
+
+     &__body {
+      top: 46px;
+
+     }
+
+     &__item {
+      font-size: 16px;
+     }
+    }
+
+    .purchase__form-checkbox {
+     margin-bottom: 20px;
+
+     .purchase__checkbox {
+      .checkbox__btn {
+       width: 30px;
+       height: 30px;
+      }
+
+      .checkbox__name {
+       font-size: 12px;
+       padding-left: 40px;
+      }
+     }
+    }
+
+    .purchase__form-logic {
+     .purchase__form-button {
+      button {
+       width: 200px;
+       height: 40px;
+       padding: 0;
+      }
+     }
+
+     .purchase__form-info {
+      font-size: 14px;
+
+      .price__result {
+       margin-bottom: 0;
+      }
+     }
+    }
+   }
+  }
+ }
+
+ // facts
+ .facts {
+  &__inner {
+   padding: 60px 0 150px 0;
+
+   .facts__content {
+    .facts__content-title {
+     margin-bottom: 100px;
+    }
+
+    &-items {
+
+     .facts__content-left,
+     .facts__content-right {
+      .facts__content-item {
+       margin-bottom: 80px;
+      }
+     }
+
+     .facts__content-left {
+
+      .facts__content-item {
+       &::before {
+        right: 0;
+        top: -80%;
+       }
+
+       &:nth-child(2) {
+        &::before {
+         right: 0;
+        }
+       }
+      }
+     }
+
+     .facts__content-middle {
+      bottom: 0;
+      top: unset;
+
+      .facts__content-img {
+       display: none;
+      }
+     }
+
+     .facts__content-right {
+      .facts__content-item {
+       &::before {
+        left: 0;
+        top: -80%;
+       }
+
+       &:nth-child(2) {
+
+        &::before {
+         left: 0;
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+
+ // superfood
+ .superfood {
+  &__inner {
+   .tabs {
+    &__triggers {
+     display: flex;
+     justify-content: space-around;
+
+     &-item {
+      max-width: 125px;
+      width: 100%;
+      text-align: center;
+
+      &:nth-child(2) {
+       margin: 0;
+      }
+     }
+    }
+
+    &__content {
+     &-item {
+      padding: 40px 40px;
+
+      .tabs__content-img {
+       margin-right: 0;
+      }
+     }
+    }
+   }
+  }
+ }
+}
+
+@media (max-width: 900px) {
+
+ // variety
+ .variety {
+  &__inner {
+   .variety__content {
+    &-items {
+
+     .variety__item {
+      margin: 0 25px 35px 25px;
+     }
+    }
+   }
+  }
+ }
+
+ // ingredients
+ .ingredients {
+  .ingredients__content-items {
+   flex-wrap: wrap;
+   justify-content: space-around;
+
+   .variety__item {
+    margin: 0 10px 40px 10px;
+   }
+  }
+ }
+}
+
+@media (max-width: 800px) {
+
+ // testimonial
+ .testimonial {
+  .tsmnl__inner {
+   padding: 60px 0;
+  }
+
+  .tsmnl__content {
+   &-items {
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .tsmnl__content-item {
+     margin: 0 0px 30px;
+    }
+   }
+  }
+ }
+
+ // email-form
+ .email-form {
+  &__inner {
+   padding: 40px 10px 80px;
+
+   &-form {
+    .form-email {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+
+     input {
+      margin-bottom: 40px;
+      margin-right: 0;
+     }
+
+     .error {
+      bottom: -4px;
+     }
+    }
+   }
+  }
+ }
+}
+
+@media (max-width: 767px) {
+
+ // global
+ // container
+ .container {
+  padding: 0 15px;
+ }
+
+ // title
+ .title {
+  font-size: 40px;
+  margin-bottom: 15px;
+
+  &::before {
+   top: 48%;
+  }
+ }
+
+ // text
+ .purchase__market-text {
+  font-size: 12px;
+  margin-bottom: 6px;
+ }
+
+ .popup {
+  .popup__wrapper {
+   padding: 30px 5px;
+
+   .popup__content {
+    &-video {
+     height: 400px;
+    }
+   }
+  }
+ }
+
+ // porchase 
+ .purchase {
+
+  &__inner {
+   flex-direction: column;
+   padding: 50px 0;
+
+   &-logo {
+    margin-right: 0 !important;
+    width: 40%;
+    margin-bottom: 20px;
+   }
+  }
+
+  h3 {
+   font-size: 14px;
+  }
+ }
+
+ // graphic
+ .graphic {
+  .graphic__inner {
+   &-convas {
+    position: relative;
+    margin: auto;
+    width: 90vw;
+    height: 53vh;
+   }
+  }
+ }
+
+ // superfood
+ .superfood {
+  &__inner {
+   padding: 60px 0 60px;
+
+   .tabs {
+    &__content {
+     &-item {
+      padding: 30px 40px;
+
+      .tabs__content-img {
+       display: none;
+      }
+
+      .tabs__content-table {
+       .line {
+        padding: 6px 0;
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
+
+@media (max-width: 699px) {
+
+ // porchase 
+ .purchase {
+
+  &__inner {
+   padding: 20px 0;
+  }
+ }
+
+ // variety
+ .variety {
+  &__inner {
+   padding: 50px 0 55px;
+
+   .variety__content {
+    &-items {
+
+     .variety__item {
+      margin: 0 5px 30px 5px;
+     }
+    }
+   }
+  }
+ }
+
+ // ingredients
+ .ingredients {
+  &__inner {
+   padding: 50px 0 30px 0;
+  }
+
+  .ingredients__content-items {
+   flex-wrap: wrap;
+   justify-content: space-around;
+
+   .variety__item {
+    margin: 0 10px 40px 10px;
+   }
+  }
+ }
+
+ // facts
+ .facts {
+  &__inner {
+   font-size: 14px;
+
+   .facts__content {
+    .facts__content-title {
+     margin-bottom: 30px;
+    }
+
+    &-items {
+     padding: 0 20px;
+     flex-direction: column;
+     text-align: center;
+
+     .facts__content-left,
+     .facts__content-right {
+      max-width: 650px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+
+      .facts__content-item {
+       text-align: center;
+       margin-bottom: 25px;
+       width: 100%;
+
+       .facts__content-name {
+        margin-bottom: 5px;
+       }
+      }
+     }
+
+     .facts__content-left {
+      margin-right: 0;
+
+      .facts__content-item {
+
+
+       &::before {
+        display: none;
+       }
+
+       &:last-child {
+        margin-bottom: 25px;
+       }
+      }
+     }
+
+     .facts__content-middle {
+      width: 100%;
+     }
+
+     .facts__content-right {
+      margin-left: 0px;
+
+      .facts__content-item {
+       &::before {
+        display: none;
+       }
+
+       &:last-child {
+        margin-bottom: 25px;
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+
+ // graphic
+ .graphic {
+  .graphic__inner {
+   &-convas {
+    position: relative;
+    margin: auto;
+    width: 90vw;
+    height: 44vh;
+   }
+  }
+ }
+}
+
+@media (max-width: 600px) {
+
+ // porchase 
+ .purchase {
+
+  &__inner {
+   .purchase__market {
+    max-width: 450px;
+   }
+
+   .purchase__market-info {
+    margin-bottom: 15px;
+   }
+
+   &-form {
+    .select {
+     margin-bottom: 15px;
+     font-size: 16px;
+
+     &__header {
+      height: 45px;
+     }
+
+     &__body {
+      top: 46px;
+
+     }
+
+     &__item {
+      font-size: 16px;
+     }
+    }
+
+    .purchase__form-checkbox {
+     margin-bottom: 20px;
+
+     .purchase__checkbox {
+      .checkbox__btn {
+       width: 30px;
+       height: 30px;
+      }
+
+      .checkbox__name {
+       font-size: 12px;
+       padding-left: 40px;
+      }
+     }
+    }
+
+    .purchase__form-logic {
+     .purchase__form-button {
+      button {
+       width: 200px;
+       height: 40px;
+       padding: 0;
+      }
+     }
+
+     .purchase__form-info {
+      font-size: 14px;
+
+      .price__result {
+       margin-bottom: 0;
+      }
+     }
+    }
+   }
+  }
+ }
+
+ // testimonial
+ .testimonial {
+  .tsmnl__inner {
+   padding: 60px 0;
+  }
+
+  .tsmnl__content {
+   &-items {
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .tsmnl__content-item {
+     margin: 0 10px 30px 0;
+    }
+   }
+  }
+ }
+
+
+ // superfood 
+ .superfood {
+  &__inner {
+   .tabs {
+
+    &__content {
+     font-size: 15px;
+
+     &-item {
+      padding: 20px;
+      min-height: auto;
+
+      .tabs__content-table {
+       .line {}
+      }
+     }
+    }
+   }
+  }
+ }
+
+ // email-form
+ .email-form {
+  &__inner {
+   &-info {
+    margin-bottom: 30px;
+   }
+
+   &-form {
+
+    .form-email {
+     input {
+      font-size: 13px;
+      height: 40px;
+      margin-bottom: 30px;
+     }
+
+     .error {
+      bottom: 10px;
+      left: 10%;
+      font-size: 13px;
+     }
+
+     button {
+      span {
+       height: 50px;
+      }
+     }
+    }
+   }
+  }
+ }
+}
+
+@media (max-width: 560px) {
+ .variety {
+  &__inner {
+   padding: 40px 0 45px;
+
+   .variety__content {
+    &-items {
+     justify-content: space-around;
+
+     .variety__item {
+      margin: 0 5px 25px 5px;
+     }
+    }
+   }
+  }
+ }
+
+ // graphic
+ .graphic {
+  .graphic__inner {
+   &-convas {
+    position: relative;
+    margin: auto;
+    width: 90vw;
+    height: 36vh;
+   }
+  }
+ }
+}
+
+
+
+@media (max-width: 499px) {
+
+ // global
+ .container {
+  padding: 0 5px;
+ }
+
+ .title {
+  font-size: 35px;
+  margin-bottom: 15px;
+
+  &::before {
+   top: 55%;
+  }
+ }
+
+
+ .popup {
+  .popup__wrapper {
+   .popup__content {
+    &-video {
+     height: 300px;
+    }
+   }
+  }
+ }
+
+ // porchase 
+ .purchase {
+
+  &__inner {
+   padding: 10px 0;
+
+   &-logo {
+    width: 50%;
+   }
+  }
+
+  .price-per-meal {
+   display: none;
+  }
+ }
+
+ // presentation
+ .presentation {
+  &__inner {
+   padding: 50px 0 20px 0;
+
+   &-info {
+    margin-bottom: 20px;
+
+    .presintation__info-text {
+     font-size: 14px;
+    }
+
+    .presintation__info-uptext {
+     margin-bottom: 5px;
+    }
+   }
+  }
+ }
+
+ // superfood 
+ .superfood {
+  &__inner {
+   .tabs {
+    &__triggers {
+     &-item {
+      font-size: 15px;
+     }
+    }
+
+    &__content {
+     font-size: 13px;
+
+     &-item {
+      padding: 20px 10px;
+      min-height: auto;
+
+      .tabs__content-table {
+       .line {
+        .name {
+         max-width: 180px;
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
+
+@media (max-width: 400px) {
+
+ // graphic
+ .graphic {
+  display: none;
+
+  .graphic__inner {
+   &-convas {}
+  }
+ }
+}

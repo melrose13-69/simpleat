@@ -7,7 +7,43 @@ import 'cookielib/src/cookie'
 import 'chart.js'
 // SCSS
 import './assets/scss/main.scss'
+// global const
 
+// burger menu
+let burgerMenu = document.getElementById('burger'),
+ headerList = document.getElementById('header-list'),
+ headerBtn = document.getElementById('header-btn'),
+ headerInner = document.getElementById('header-inner');
+let headerListChilds = headerList.children,
+ headerListChildsLength = headerListChilds.length,
+ headerBtnChilds = headerBtn.children,
+ headerBtnChildsLength = headerBtnChilds.length;
+
+// burger menu
+burgerMenu.addEventListener('click', function () {
+ this.classList.toggle('menu-on');
+ headerList.classList.toggle('show');
+ headerBtn.classList.toggle('show');
+ headerInner.classList.toggle('bgc-show');
+ body.classList.toggle('body-lock')
+})
+
+// burger list
+window.addEventListener("resize", function () {
+ if (window.matchMedia("(max-width: 768px)").matches) {
+
+  for (let i = 0; i < headerBtnChildsLength; i++) {
+   headerList.insertBefore(headerBtnChilds[0], headerListChilds[i + 3]);
+  }
+ } else {
+  for (let i = 0; i < headerListChildsLength; i++) {
+   headerBtn.insertBefore(headerListChilds[1], headerBtnChilds[i + 1]);
+  }
+ }
+});
+
+
+// // chart
 let speedCanvas = document.getElementById("speedChart");
 
 Chart.defaults.global.defaultFontFamily = "Montserrat";
@@ -93,6 +129,7 @@ let lineChart = new Chart(speedCanvas, {
  data: timeData,
  options: dataOptions
 });
+
 
 // select lang
 let myBtn = document.getElementsByClassName('drop_btn');
@@ -208,7 +245,6 @@ subscribe.addEventListener('change', function (e) {
 
 // subscribe info
 let subscribeBtn = document.getElementById('subscribe-checkbox')
-let subscribeInfo = document.getElementById('subscribe__info')
 let purchaseBtn = document.getElementById('buynow-checkbox');
 
 if (subscribeBtn.classList.contains('subscribe__info-open')) {} else {
@@ -266,7 +302,7 @@ window.onload = () => {
 };
 
 
-// vieo popup--------------------------------------------------
+// // vieo popup--------------------------------------------------
 let popupLinks = document.querySelectorAll('.popup-link');
 let body = document.querySelector('body');
 let lockPadding = document.querySelectorAll('.lock-padding');

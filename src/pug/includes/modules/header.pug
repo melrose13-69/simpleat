@@ -1,18 +1,21 @@
 header.header.lock-padding#header
  .container--fluid-light
   .container
-   .header__inner
-    .header__inner-list.header__list
-     .header__list-cart
-      a(class="header__list-link cart-link" href="#") Cart
-     .header__list-contact
-      a(class="header__list-link contact-link" href="#") Contact
+   .header__inner#header-inner
+    .burger-menu#burger
+     .burger
+    .header__inner-list.header__list#header-list
+     .header__list-wrapper
+      .header__list-cart
+       a(class="header__list-link cart-link" href="#") Cart
+      .header__list-contact
+       a(class="header__list-link contact-link" href="#") Contact
     .header__inner-logo
      a(href="#")
-      img(src="assets/img/logo.png", alt="" class="header__logo")
-    .header__inner-btn.header__btn
-     .header__btn-signin
-      a(href="#" class="header__btn-link signin-link") Sign in
-     span.btn__order.btn--animate Order Now
-      
-   
+      img(src="assets/img/logo.png" alt="" class="header__logo")
+    .header__inner-btn.header__btn#header-btn
+     .header__btn-wrapper
+      .header__btn-signin
+       a(href="#" class="header__btn-link signin-link") Sign in
+      span.btn__order.btn.btn--animate Order Now
+
